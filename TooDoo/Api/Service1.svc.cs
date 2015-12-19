@@ -5,6 +5,8 @@ using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.ServiceModel.Web;
 using System.Text;
+using Core.Model;
+using BLL;
 
 namespace Api
 {
@@ -12,23 +14,10 @@ namespace Api
     // NOTE: In order to launch WCF Test Client for testing this service, please select Service1.svc or Service1.svc.cs at the Solution Explorer and start debugging.
     public class Service1 : IService1
     {
-        public string GetData(int value)
+        public List<ToDo> GetToDoLists()
         {
-            return string.Format("You entered: {0}", value);
+            var tooDooRepository = new TooDooRepository();
+            return tooDooRepository.GetToDoLists();
         }
-
-        public CompositeType GetDataUsingDataContract(CompositeType composite)
-        {
-            if (composite == null)
-            {
-                throw new ArgumentNullException("composite");
-            }
-            if (composite.BoolValue)
-            {
-                composite.StringValue += "Suffix";
-            }
-            return composite;
-        }
-
     }
 }

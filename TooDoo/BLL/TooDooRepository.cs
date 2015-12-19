@@ -15,5 +15,11 @@ namespace BLL
             var dataRepository = new DataRepository();
             dataRepository.AddToDo(toDo);
         }
+
+        public List<ToDo> GetToDoLists()
+        {
+            var dataRepository = new DataRepository();
+            return dataRepository.GetToDoList();
+        }
     }
 }
