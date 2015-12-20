@@ -1,13 +1,8 @@
-﻿
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System;
 
-namespace Core.Model
+namespace ToDoList
 {
-    public class ToDo
+    internal class ToDo
     {
         public ToDo() { }
         public int Id { get; set; }

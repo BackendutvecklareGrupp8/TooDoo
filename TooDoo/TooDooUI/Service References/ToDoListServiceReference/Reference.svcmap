@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="e627add2-19bb-4aa1-be55-65e921e9b447" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:55020/ToDoListService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="ToDoListService.wsdl" MetadataType="Wsdl" ID="2446850f-be3a-4d31-9804-036590f5dca5" SourceId="1" SourceUrl="http://localhost:55020/ToDoListService.svc?wsdl" />
+    <MetadataFile FileName="ToDoListService.xsd" MetadataType="Schema" ID="74da000d-65f9-4211-8c36-935784dc8698" SourceId="1" SourceUrl="http://localhost:55020/ToDoListService.svc?xsd=xsd1" />
+    <MetadataFile FileName="ToDoListService1.xsd" MetadataType="Schema" ID="b254c3dc-d956-46cb-9ad8-837b30fea859" SourceId="1" SourceUrl="http://localhost:55020/ToDoListService.svc?xsd=xsd0" />
+    <MetadataFile FileName="ToDoListService.disco" MetadataType="Disco" ID="fd642b40-b0c9-4107-b952-cba363767674" SourceId="1" SourceUrl="http://localhost:55020/ToDoListService.svc?disco" />
+    <MetadataFile FileName="ToDoListService2.xsd" MetadataType="Schema" ID="db0d41bb-1475-4cee-8a5d-1a82eb534538" SourceId="1" SourceUrl="http://localhost:55020/ToDoListService.svc?xsd=xsd2" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>
