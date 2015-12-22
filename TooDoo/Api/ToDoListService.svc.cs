@@ -23,19 +23,7 @@ namespace Api
         public List<ToDoList> GetToDoLists()
         {
             var tooDooRepository = new TooDooRepository();
-            var toDoList = tooDooRepository.GetToDoLists();
-            var toDoListsTemp = toDoList
-                .GroupBy(g => g.Name)
-                .Select(grp => grp.ToList())
-                .ToList();
-            var toDoLists = new List<ToDoList>();
-
-            foreach (var list in toDoListsTemp)
-            {
-                toDoLists.Add(new ToDoList { Name = list.First().Name });
-            }
-
-            return toDoLists;
+            return tooDooRepository.GetToDoLists();
 
         }
     }

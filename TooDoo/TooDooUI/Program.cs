@@ -51,8 +51,8 @@ namespace ToDoList
         {
             //Metod för att göra ett API-anrop via REST, få tillbaka en JSON-sträng, deserialisera (omforma) den till ett objekt 
 
-            var url = "http://localhost:55020/ToDoListService.svc/GetToDoLists";   // Min lokala endpoint till API:et och metoden GetToDoListByName
-            var urlParameters = "";                                          // URL-parametern, i det här fallet namnet på listan
+            var url = "http://localhost:55020/ToDoListService.svc/GetToDoLists";    // Min lokala endpoint till API:et och metoden GetToDoListByName
+            var urlParameters = "";                                                 // URL-parametern, i det här fallet namnet på listan
 
             HttpClient client = new HttpClient();   //Klass som sköter kommunikationen över nätverket/internet
             client.BaseAddress = new Uri(url);      //Sätter url:en på httpclient-objektet
