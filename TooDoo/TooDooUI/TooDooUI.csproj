@@ -55,6 +55,8 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ToDo.cs" />
+    <Compile Include="ToDoList.cs" />
+    <Compile Include="ToDoListsWrapper.cs" />
     <Compile Include="ToDoListWrapper.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -17,5 +17,9 @@ namespace Api
         [WebGet]
         List<ToDo> GetToDoListByName(string name);
 
+        [OperationContract]
+        [WebGet]
+        List<ToDoList> GetToDoLists();
+
     }    
 }

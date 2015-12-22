@@ -21,5 +21,26 @@ namespace BLL
             var dataRepository = new DataRepository();
             return dataRepository.GetToDoListByName(name);
         }
+
+        public List<ToDoList> GetToDoLists()
+        {
+            var dataRepository = new DataRepository();
+            var toDoList = dataRepository.GetToDoList();
+            var toDoListsTemp = toDoList
+                .GroupBy(g => g.Name)
+                .Select(grp => grp.ToList())
+                .ToList();
+            var toDoLists = new List<ToDoList>();
+
+            foreach (var list in toDoListsTemp)
+            {
+                toDoLists.Add(new ToDoList { Name = list.First().Name});
+            }
+
+            return toDoLists;
+            
+        }
+
+
     }
 }
