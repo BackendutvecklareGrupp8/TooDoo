@@ -17,5 +17,7 @@ namespace Core.Model
         public DateTime CreatedDate { get; set; }
         public DateTime DeadLine { get; set; }
         public int EstimationTime { get; set; }
+        public bool IsImportant { get; set; }
+
     }
 }

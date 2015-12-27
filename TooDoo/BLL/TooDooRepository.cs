@@ -19,7 +19,14 @@ namespace BLL
         public List<ToDo> GetToDoListByName(string name)
         {
             var dataRepository = new DataRepository();
-            return dataRepository.GetToDoListByName(name);
+            var tempList = dataRepository.GetToDoListByName(name);
+
+            foreach (var listItem in tempList)
+            {
+                listItem.IsImportant = listItem.Description.Contains("!");
+            }
+
+            return tempList;
         }
 
         public List<ToDoList> GetToDoLists()

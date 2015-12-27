@@ -25,6 +25,7 @@ namespace DAL
         {
             connString = _connString;
         }
+
         /// <summary>
         /// AddToDo
         /// </summary>
@@ -65,6 +66,7 @@ namespace DAL
                 ErrorMessage = ex.Message;
             }
         }
+
         /// <summary>
         /// UpdateToDo
         /// </summary>
@@ -102,6 +104,7 @@ namespace DAL
                 ErrorMessage = ex.Message;
             }
         }
+
         /// <summary>
         /// DeleteToDo
         /// </summary>
@@ -220,12 +223,12 @@ namespace DAL
 
 
         }
+
         /// <summary>
         ///  GetToDoListByName
         /// </summary>
         /// <param name="name"></param>
         /// <returns></returns>
-
         public List<ToDo> GetToDoListByName(string name)
         {
             try
