@@ -27,11 +27,12 @@ namespace Api
 
         }
 
-        public void DeleteToDo(int id)
+        public bool DeleteToDo(int id)
         {
             var tooDooRepository = new TooDooRepository();
-            return ;
-
+            var deleted = TooDooRepository.DeleteToDo(id);
+            return deleted;
         }
+    
     }
 }

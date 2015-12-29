@@ -23,7 +23,7 @@ namespace Api
 
         [OperationContract]
         [WebInvoke]
-        void DeleteToDo(int id);
+        bool DeleteToDo(int id);
         
     }    
 }

@@ -16,10 +16,18 @@ namespace BLL
             dataRepository.AddToDo(toDo);
         }
 
-        public void DeleteToDo(int id)
+        public bool DeleteToDo(int id)
         {
             var dataRepository = new DataRepository();
             dataRepository.DeleteToDo(id);
+
+            var toDoTask = dataRepository.GetToDoById(id);
+
+            if (toDoTask != null)
+            {
+                return false;
+            }
+            return true;
         }
 
         public List<ToDo> GetToDoListByName(string name)
