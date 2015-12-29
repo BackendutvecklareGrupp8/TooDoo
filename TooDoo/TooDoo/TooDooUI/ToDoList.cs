@@ -9,5 +9,6 @@ namespace TooDooUI
     public class ToDoList
     {
         public string Name { get; set; }
+        public int Id { get;  set; }
     }
 }

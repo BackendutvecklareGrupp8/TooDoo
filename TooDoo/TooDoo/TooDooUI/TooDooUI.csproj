@@ -52,6 +52,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DeleteToDo.cs" />
     <Compile Include="List.cs" />
     <Compile Include="Navigation.cs" />
     <Compile Include="Program.cs" />
