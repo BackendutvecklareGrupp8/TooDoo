@@ -16,11 +16,6 @@ namespace ToDoList
             Navigation.GoToStart();
         }   
 
-        
-
-
-
-
         private static void PrintToDoList()
         {
             //Metod för att göra ett API-anrop via REST, få tillbaka en JSON-sträng, deserialisera (omforma) den till ett objekt 

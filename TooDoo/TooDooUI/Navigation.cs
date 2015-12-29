@@ -14,6 +14,7 @@ namespace TooDooUI
             Console.WriteLine("");
             Console.WriteLine("1. Visa mig alla listor");
             Console.WriteLine("2. Skapa ny lista");
+            Console.WriteLine("3. Ta bort ToDo-lista");
             Console.WriteLine("");
             Console.WriteLine("Välj ett alternativ och tryck enter.");
             var userChoice = Console.ReadLine();
@@ -23,6 +24,10 @@ namespace TooDooUI
                 case "1":
                     GoToLists();
                     break;
+
+              //  case "3":
+              //      DeleteID();
+              //      break;    
 
                 default:
                     break;
@@ -44,6 +49,7 @@ namespace TooDooUI
             {
                 Console.WriteLine(list.Name);
             }
+            Console.ReadLine();
         }
 
         //private static void ShowListsMenu()

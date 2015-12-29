@@ -30,7 +30,7 @@ namespace Api
         public bool DeleteToDo(int id)
         {
             var tooDooRepository = new TooDooRepository();
-            var deleted = TooDooRepository.DeleteToDo(id);
+            var deleted = tooDooRepository.DeleteToDo(id);
             return deleted;
         }
     
