@@ -10,38 +10,21 @@ namespace TooDooUI
 {
     public class ToDoRepository
     {
+        public ToDoListWrapper GetToDoListItems(string name)
+        {
+            var httpRequestHelper = new HttpRequestHelper();
+            var toDoList = httpRequestHelper.ExecuteApiCall<ToDoListWrapper>("GetToDoListByName", "name=" + name);
+
+            return toDoList;
+        }
+
         public ToDoListsWrapper GetToDoLists()
         {
-            //Metod för att göra ett API-anrop via REST, få tillbaka en JSON-sträng, deserialisera (omforma) den till ett objekt 
+            var httpRequestHelper = new HttpRequestHelper();
+            var toDoLists = httpRequestHelper.ExecuteApiCall<ToDoListsWrapper>("GetToDoLists", "");
 
-            var url = "http://localhost:55020/ToDoListService.svc/GetToDoLists";    // Min lokala endpoint till API:et och metoden GetToDoListByName
-            var urlParameters = "";                                                 // URL-parametern, i det här fallet namnet på listan
-            ToDoListsWrapper toDoListWrapper = new ToDoListsWrapper();
-
-            HttpClient client = new HttpClient();   //Klass som sköter kommunikationen över nätverket/internet
-            client.BaseAddress = new Uri(url);      //Sätter url:en på httpclient-objektet
-
-            //Console.WriteLine("Tryck enter för att starta anropet");
-            //Console.ReadLine();                                         //Stopp för att säkerställa att API hinner starta innan konsolen efterfrågar något
-
-            client.DefaultRequestHeaders.Accept.Add(                    //Sätter en header i anropet för att tala om vilken typ av data den vill ha tillbaka
-            new MediaTypeWithQualityHeaderValue("application/json"));
-
-            HttpResponseMessage response = client.GetAsync(urlParameters).Result;   // Här görs http-requesten. Metoden GetAsync returnerar ett response-objekt
-            if (response.IsSuccessStatusCode)                                       // Kontrollerar om http-status är 200-nånting (success)
-            {
-                toDoListWrapper = response.Content.ReadAsAsync<ToDoListsWrapper>().Result;   // Gör om JSON-strängen till ett objekt av typen ToDoListWrapper
-
-                
-            }
-            else
-            {
-                /*Console.WriteLine("{0} ({1})", (int)response.StatusCode, response.ReasonPhrase);  */  // Felhantering
-               
-            }
-
-            return toDoListWrapper;
-           
+            return toDoLists;
         }
+
     }
 }
