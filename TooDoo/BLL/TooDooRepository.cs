@@ -16,6 +16,12 @@ namespace BLL
             dataRepository.AddToDo(toDo);
         }
 
+        public void DeleteToDo(int id)
+        {
+            var dataRepository = new DataRepository();
+            dataRepository.DeleteToDo(id);
+        }
+
         public List<ToDo> GetToDoListByName(string name)
         {
             var dataRepository = new DataRepository();

@@ -21,5 +21,9 @@ namespace Api
         [WebGet]
         List<ToDoList> GetToDoLists();
 
+        [OperationContract]
+        [WebInvoke]
+        void DeleteToDo(int id);
+        
     }    
 }

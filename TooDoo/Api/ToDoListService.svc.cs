@@ -26,5 +26,12 @@ namespace Api
             return tooDooRepository.GetToDoLists();
 
         }
+
+        public void DeleteToDo(int id)
+        {
+            var tooDooRepository = new TooDooRepository();
+            return ;
+
+        }
     }
 }
