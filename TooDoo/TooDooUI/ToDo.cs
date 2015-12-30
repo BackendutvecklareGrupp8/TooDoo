@@ -5,7 +5,7 @@ namespace ToDoList
     /// <summary>
     /// Represents a list item in a ToDo list
     /// </summary>
-    internal class ToDo
+    public class ToDo
     {
         public ToDo() { }
         public int Id { get; set; }

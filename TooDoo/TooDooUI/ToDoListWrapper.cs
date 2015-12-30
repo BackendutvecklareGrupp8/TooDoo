@@ -7,7 +7,7 @@ using ToDoList;
 
 namespace TooDooUI
 {
-    class ToDoListWrapper
+    public class ToDoListWrapper
     {
         public List<ToDo> d { get; set; }
     }
