@@ -9,6 +9,7 @@ namespace TooDooUI
     public static class Navigation
     {
         public static object BLL { get; private set; }
+        private static List<ToDoList> toDoLists;
 
         public static void GoToStart()
         {
@@ -25,12 +26,24 @@ namespace TooDooUI
                 case "1":
                     GoToLists();
                     break;
-
+                case "2":
+                    GoToCreateList();
+                    break;   
                 default:
                     break;
             }
         }
-        
+
+        /// <summary>
+        /// Skapa ny ToDo-lista
+        /// </summary>
+        private static void GoToCreateList()
+        {
+            Console.Clear();
+
+
+        }
+
         /// <summary>
         /// Listar alla ToDo-listor, ger möjlighet att välja en
         /// </summary>
@@ -42,6 +55,7 @@ namespace TooDooUI
 
             var toDoRepository = new ToDoRepository();
             var lists = toDoRepository.GetToDoLists().d;
+            toDoLists = lists;
 
             
 
@@ -60,11 +74,31 @@ namespace TooDooUI
             {
                 Console.WriteLine(errorMessage);
             }
-            
-            Console.WriteLine("Du valde lista nr " + ListNoInput);
-            Console.ReadLine();
+
+            GoToList(ListNoInput);
+                
+           }
+
+        private static void GoToList(int listNo)
+        {
+            Console.Clear();
+
+            var list = toDoLists[listNo - 1];
+            var toDoRepository = new ToDoRepository();
+            var toDoListWrapper = toDoRepository.GetToDoListItems(list.Name);
+
+
+            Console.WriteLine(string.Format("Listans namn: {0}", list.Name));
+            Console.WriteLine("Löpnr	 Beskrivning	    Skapad datum		Deadline		Beräknad tidsåtgång (min)	Färdig");
+
+            foreach (var listitem in toDoListWrapper.d)
+            {
+                Console.WriteLine(string.Format("{0}        {1}         {2}         {3}            {4}                 {5}", listitem.Id, listitem.Description, listitem.CreatedDate, listitem.DeadLine, listitem.EstimationTime, listitem.Finnished));
+            }
+
         }
 
         
     }
 }
+    
