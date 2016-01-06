@@ -36,14 +36,30 @@ namespace TooDooUI
         {
             Console.Clear();
             Console.WriteLine("Välj den lista du vill öppna och tryck enter");
+            Console.WriteLine("");
 
             var toDoRepository = new ToDoRepository();
             var lists = toDoRepository.GetToDoLists().d;
 
+            
+
             foreach (var list in lists)
             {
-                Console.WriteLine(list.Name);
+                var listNo = lists.IndexOf(list) + 1;
+
+                Console.WriteLine(listNo + " " + list.Name);
             }
+
+            Console.WriteLine("");
+            int ListNoInput;
+
+            while (int.TryParse(Console.ReadLine(), out ListNoInput) == false)           
+            {
+                Console.WriteLine("Inmatningen måste vara ett heltal.");
+            }
+            
+            Console.WriteLine("Du valde lista nr " + ListNoInput);
+            Console.ReadLine();
         }
 
         //private static void ShowListsMenu()

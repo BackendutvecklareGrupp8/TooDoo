@@ -4,12 +4,7 @@ using System.Data.SqlClient;
 using System.Collections.Generic;
 using Core.Model;
 
-/*
-Refactoring: 
-1- UpdateToDoList changed name to UpdateToDo
-2- GetToDoListbyId changed name GetToDoById returns ToDo and not list of ToDo
 
-*/
 
 namespace DAL
 {
@@ -25,7 +20,6 @@ namespace DAL
         {
             connString = _connString;
         }
-
         /// <summary>
         /// AddToDo
         /// </summary>
@@ -65,8 +59,8 @@ namespace DAL
             {
                 ErrorMessage = ex.Message;
             }
-        }
 
+        }
         /// <summary>
         /// UpdateToDo
         /// </summary>
@@ -103,8 +97,8 @@ namespace DAL
             {
                 ErrorMessage = ex.Message;
             }
-        }
 
+        }
         /// <summary>
         /// DeleteToDo
         /// </summary>
@@ -134,6 +128,7 @@ namespace DAL
             {
                 ErrorMessage = ex.Message;
             }
+
         }
 
         /// <summary>
@@ -223,12 +218,12 @@ namespace DAL
 
 
         }
-
         /// <summary>
         ///  GetToDoListByName
         /// </summary>
         /// <param name="name"></param>
         /// <returns></returns>
+
         public List<ToDo> GetToDoListByName(string name)
         {
             try
@@ -239,7 +234,7 @@ namespace DAL
 
                     conn = new SqlConnection(connString);
 
-                    string sqlSelectString = "select * from ToDoList where Name like '%" + name + "%'";
+                    string sqlSelectString = "select * from ToDoList where Name = '" + name + "'";
                     command = new SqlCommand(sqlSelectString, conn);
                     command.Connection.Open();
 
