@@ -8,6 +8,8 @@ namespace TooDooUI
 {
     public static class Navigation
     {
+        public static object BLL { get; private set; }
+
         public static void GoToStart()
         {
             Console.WriteLine("MENY");
@@ -52,10 +54,16 @@ namespace TooDooUI
 
             Console.WriteLine("");
             int ListNoInput;
+            var errorMessage = "";
 
-            while (int.TryParse(Console.ReadLine(), out ListNoInput) == false)           
+            //while (int.TryParse(Console.ReadLine(), out ListNoInput) == false)           
+            //{
+            //    Console.WriteLine("Inmatningen måste vara ett heltal.");
+            //}
+
+            while (Helpers.TryParseIntWithRange(Console.ReadLine(), 1, lists.Count, out ListNoInput, out errorMessage) == false)
             {
-                Console.WriteLine("Inmatningen måste vara ett heltal.");
+                Console.WriteLine(errorMessage);
             }
             
             Console.WriteLine("Du valde lista nr " + ListNoInput);

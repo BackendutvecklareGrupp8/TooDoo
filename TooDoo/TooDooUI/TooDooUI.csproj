@@ -52,6 +52,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Helpers.cs" />
     <Compile Include="HttpRequestHelper.cs" />
     <Compile Include="List.cs" />
     <Compile Include="Navigation.cs" />
