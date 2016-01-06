@@ -56,11 +56,6 @@ namespace TooDooUI
             int ListNoInput;
             var errorMessage = "";
 
-            //while (int.TryParse(Console.ReadLine(), out ListNoInput) == false)           
-            //{
-            //    Console.WriteLine("Inmatningen måste vara ett heltal.");
-            //}
-
             while (Helpers.TryParseIntWithRange(Console.ReadLine(), 1, lists.Count, out ListNoInput, out errorMessage) == false)
             {
                 Console.WriteLine(errorMessage);
@@ -70,13 +65,6 @@ namespace TooDooUI
             Console.ReadLine();
         }
 
-        //private static void ShowListsMenu()
-        //{
-        //    PrintToDoLists();
-        //    Console.WriteLine("");
-        //    Console.WriteLine("");
-        //    var userChoice = Console.ReadLine();
-
-        //}
+        
     }
 }
